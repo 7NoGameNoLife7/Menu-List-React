@@ -1,4 +1,4 @@
-import MenuItem from "./MenuItem";
+import MenuItem from "./components/MenuItem";
 
 function MenuList({ foodItems }) {
 	console.log(foodItems);

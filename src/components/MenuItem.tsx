@@ -1,15 +1,17 @@
-interface Props {
-	id: number;
+import { useState } from "react";
+
+export interface MenuItemProps {
 	itemName: string;
+	id: number;
 	description: string;
 	foodImage: string;
 	price: number;
 	isFavorite: boolean;
 }
 
-function MenuItem(props) {
-	const { id, itemName, description, foodImage, price, isFavorite } = props;
-
+function MenuItem({id, itemName, description, foodImage, price, isFavorite }: MenuItemProps) {
+	
+	const [isFavoriteState, setIsFavoriteState] = useState(isFavorite);
 	//create a state isFavorite that has the inital value of isFavorite that comes from the props
 
 	return (
@@ -30,8 +32,9 @@ function MenuItem(props) {
 			{/* the button to play with the isFavorite state:
                 - onClick, will toggle the isFavorite state,
                 - content will be conditionally rendered as "❤️" or "🖤", depending on the value of isFavorite
-            */}
-			<button type="button">{isFavorite}</button>
+            */
+			 
+			<button type="button" onClick={() => setIsFavoriteState(!isFavoriteState)}>{isFavoriteState ? "❤️" : "🖤"}</button> }
 		</section>
 	);
 }

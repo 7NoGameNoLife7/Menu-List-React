@@ -46,9 +46,10 @@ function App() {
 		<main>
 			<h1>MarmiWild</h1>
 			{/* pass the variable foodItems as props to MenuList component */}
-			<MenuList />
+			<MenuList foodItemsProps={foodItems}  />
 		</main>
 	);
 }
 
 export default App;
+

@@ -28,10 +28,15 @@ figure figcaption {
 
 .itemContainer {
 	display: grid;
-	grid-template-columns: 1fr auto;
+	grid-template-columns: 2fr auto;
 	grid-template-rows: repeat(2, auto);
 	place-items: center;
 	border: 1px solid lightgrey;
 	margin-top: 25px;
 	padding-right: 1rem;
+	padding: 1rem;
+}
+
+.food-items-container {
+	display: flex;
 }

@@ -9,8 +9,14 @@ export interface MenuItemProps {
 	isFavorite: boolean;
 }
 
-function MenuItem({id, itemName, description, foodImage, price, isFavorite }: MenuItemProps) {
-	
+function MenuItem({
+	id,
+	itemName,
+	description,
+	foodImage,
+	price,
+	isFavorite,
+}: MenuItemProps) {
 	const [isFavoriteState, setIsFavoriteState] = useState(isFavorite);
 	//create a state isFavorite that has the inital value of isFavorite that comes from the props
 
@@ -29,12 +35,19 @@ function MenuItem({id, itemName, description, foodImage, price, isFavorite }: Me
 			{/* the span will receive the item price from the props */}
 			<aside>{price} EUR</aside>
 
-			{/* the button to play with the isFavorite state:
+			{
+				/* the button to play with the isFavorite state:
                 - onClick, will toggle the isFavorite state,
                 - content will be conditionally rendered as "❤️" or "🖤", depending on the value of isFavorite
             */
-			 
-			<button type="button" onClick={() => setIsFavoriteState(!isFavoriteState)}>{isFavoriteState ? "❤️" : "🖤"}</button> }
+
+				<button
+					type="button"
+					onClick={() => setIsFavoriteState((prevFav) => !prevFav)}
+				>
+					{isFavoriteState ? "❤️" : "🖤"}
+				</button>
+			}
 		</section>
 	);
 }

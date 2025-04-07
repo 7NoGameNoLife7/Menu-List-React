@@ -2,14 +2,11 @@ import MenuItem, { MenuItemProps } from "./MenuItem";
 
 interface FoodItemsProps {
 	foodItemsProps: MenuItemProps[];
-
 }
 
-function MenuList({foodItemsProps}: FoodItemsProps ) {
-	
-
+function MenuList({ foodItemsProps }: FoodItemsProps) {
 	return (
-		<>
+		<div className="food-items-container">
 			{foodItemsProps.map((foodItem) => (
 				<MenuItem
 					key={foodItem.id}
@@ -23,10 +20,9 @@ function MenuList({foodItemsProps}: FoodItemsProps ) {
 			))}
 			{/* map through the foodItems array and render a MenuItem component for each element */}
 			{/* the key prop is used to give a unique identifier to each element of the foodItems array */}
-		
-			
+
 			{/* render a MenuItem component for each element of the foodItems array */}
-		</>
+		</div>
 	);
 }
 
